@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Domus Cure - Home Healthcare Design System
+   A warm, trustworthy healthcare palette with professional elegance
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Primary - Deep Teal (Trust, Healthcare, Calm) */
+    --primary: 175 50% 28%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Warm Coral (Action, Warmth, Care) */
+    --secondary: 15 85% 60%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Background - Soft Cream & Whites */
+    --background: 40 30% 98%;
+    --foreground: 200 25% 20%;
+    
+    /* Cards - Clean White */
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 20%;
+    
+    /* Muted - Soft Gray-Green */
+    --muted: 175 15% 95%;
+    --muted-foreground: 200 10% 45%;
+    
+    /* Accent - Light Teal */
+    --accent: 175 35% 92%;
+    --accent-foreground: 175 50% 28%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 20%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders & Inputs */
+    --border: 175 20% 88%;
+    --input: 175 20% 88%;
+    --ring: 175 50% 28%;
+    
+    --radius: 0.75rem;
+    
+    /* Custom Design Tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(175 50% 28%) 0%, hsl(175 40% 35%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(15 85% 55%) 0%, hsl(15 90% 65%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(40 30% 98%) 0%, hsl(175 15% 95%) 100%);
+    
+    --shadow-soft: 0 4px 20px -4px hsl(175 30% 30% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(175 30% 30% / 0.12);
+    --shadow-button: 0 4px 14px -2px hsl(15 85% 60% / 0.35);
+    --shadow-elevated: 0 20px 50px -12px hsl(175 30% 30% / 0.2);
+    
+    /* Sidebar - keeping defaults */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --primary: 175 45% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 15 85% 60%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --background: 200 25% 10%;
+    --foreground: 40 20% 95%;
+    
+    --card: 200 20% 14%;
+    --card-foreground: 40 20% 95%;
+    
+    --muted: 200 15% 18%;
+    --muted-foreground: 200 10% 60%;
+    
+    --accent: 175 25% 20%;
+    --accent-foreground: 175 45% 65%;
+    
+    --popover: 200 20% 14%;
+    --popover-foreground: 40 20% 95%;
+    
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 200 15% 22%;
+    --input: 200 15% 22%;
+    --ring: 175 45% 45%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-cta {
+    background: var(--gradient-cta);
+  }
+  
+  .gradient-soft {
+    background: var(--gradient-soft);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
