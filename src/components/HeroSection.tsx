@@ -62,7 +62,16 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-wrap gap-4"
           >
-            <Button variant="hero" size="lg" className="gap-2">
+            <Button
+              variant="hero"
+              size="lg"
+              className="gap-2"
+              onClick={() => {
+                document
+                  .getElementById("bookcare")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               <Calendar className="w-5 h-5" />
               Book Care Now
               <ArrowRight className="w-5 h-5" />

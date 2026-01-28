@@ -11,14 +11,15 @@ export const OfferSection = ({ onBookNow }: OfferSectionProps) => {
     {
       icon: Percent,
       title: "20% Off First Visit",
-      description: "New clients get 20% discount on their first consultation and care session",
+      description:
+        "New clients get 20% discount on their first consultation and care session",
       highlight: "Limited Time",
     },
     {
       icon: Gift,
       title: "Free Health Assessment",
       description: "Complimentary comprehensive health evaluation worth ₹2,000",
-      highlight: "Worth ₹2,000",
+      highlight: "Worth",
     },
     {
       icon: Clock,
@@ -29,11 +30,14 @@ export const OfferSection = ({ onBookNow }: OfferSectionProps) => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-secondary/10 via-background to-primary/5 relative overflow-hidden">
+    <section
+      className="py-20 bg-gradient-to-br from-secondary/10 via-background to-primary/5 relative overflow-hidden"
+      id="bookcare"
+    >
       {/* Background decorations */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-secondary/20 rounded-full blur-3xl" />
       <div className="absolute bottom-10 right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,7 +54,8 @@ export const OfferSection = ({ onBookNow }: OfferSectionProps) => {
             Exclusive Care Packages
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Take advantage of our limited-time offers and give your loved ones the premium care they deserve
+            Take advantage of our limited-time offers and give your loved ones
+            the premium care they deserve
           </p>
         </motion.div>
 
