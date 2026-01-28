@@ -41,35 +41,32 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-foreground text-background pt-16 pb-8 relative">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+    <footer className="bg-foreground text-background pt-20 pb-10 relative overflow-hidden">
+      {/* Glow */}
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none" />
+
+      <div className="relative container mx-auto px-4">
+        {/* Top Section */}
+        <div className="grid gap-14 lg:grid-cols-12 mb-16">
           {/* Brand */}
-          <div>
-            {/* <Link to="/" className="flex items-center gap-2 mb-5">
-              <div className="w-10 h-10 rounded-xl gradient-cta flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">
-                  D
-                </span>
-              </div>
-              <span className="text-xl font-bold">
-                Domus<span className="text-secondary">Cure</span>
-              </span>
-            </Link> */}
-            <Link to="/">
-              <img src={logo} alt="Domus Cure Logo" className="h-10 w-auto -ml-3" />
-            </Link>
-            <p className="text-background/70 text-sm leading-relaxed mb-5 mt-2">
-              Professional home healthcare services bringing compassionate care
-              to your loved ones, right at your doorstep.
+          <div className="lg:col-span-4">
+            <img src={logo} alt="Domus Cure" className="h-11 mb-4" />
+
+            <p className="text-background/70 text-sm leading-relaxed max-w-sm mb-6">
+              Compassion-driven home healthcare designed to support recovery,
+              dignity, and comfort — right where patients feel safest.
             </p>
-            <div className="flex gap-3">
-              {socialLinks.map((social, index) => (
+
+            <div className="flex items-center gap-4">
+              {socialLinks.map((social, i) => (
                 <a
-                  key={index}
+                  key={i}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-lg bg-background/10 flex items-center justify-center hover:bg-secondary transition-colors"
+                  className="w-11 h-11 rounded-full bg-background/10 
+                         flex items-center justify-center
+                         hover:bg-secondary hover:text-secondary-foreground
+                         transition-all"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -77,15 +74,17 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-5">Quick Links</h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
+          {/* Navigation */}
+          <div className="lg:col-span-2">
+            <h4 className="text-xs uppercase tracking-widest text-background/50 mb-5">
+              Company
+            </h4>
+            <ul className="space-y-3 text-sm">
+              {quickLinks.map((link, i) => (
+                <li key={i}>
                   <Link
                     to={link.href}
-                    className="text-background/70 hover:text-secondary transition-colors text-sm"
+                    className="hover:text-secondary transition"
                   >
                     {link.name}
                   </Link>
@@ -95,14 +94,16 @@ export const Footer = () => {
           </div>
 
           {/* Services */}
-          <div>
-            <h4 className="text-lg font-semibold mb-5">Our Services</h4>
-            <ul className="space-y-3">
-              {serviceLinks.map((link, index) => (
-                <li key={index}>
+          <div className="lg:col-span-3">
+            <h4 className="text-xs uppercase tracking-widest text-background/50 mb-5">
+              Services
+            </h4>
+            <ul className="grid grid-cols-1 gap-3 text-sm">
+              {serviceLinks.map((link, i) => (
+                <li key={i}>
                   <Link
                     to={link.href}
-                    className="text-background/70 hover:text-secondary transition-colors text-sm"
+                    className="hover:text-secondary transition"
                   >
                     {link.name}
                   </Link>
@@ -111,59 +112,120 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-5">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex gap-3">
-                <MapPin className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                <span className="text-background/70 text-sm">
-                  Ground Floor, A/3, Kankarbagh Main Rd, Near Chandan Hero,
-                  Patna, Bihar 800020
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <Phone className="w-5 h-5 text-secondary flex-shrink-0" />
-                <span className="text-background/70 text-sm">
-                  +91 9204730464
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <Mail className="w-5 h-5 text-secondary flex-shrink-0" />
-                <span className="text-background/70 text-sm">
-                  info@domuscure.in
-                </span>
-              </li>
-            </ul>
+          {/* Contact Card */}
+          <div className="lg:col-span-3">
+            <div className="bg-background/5 border border-background/10 rounded-2xl p-6">
+              <h4 className="text-sm font-semibold mb-4">Get in Touch</h4>
+
+              <div className="space-y-4 text-sm text-background/70">
+                <div className="flex gap-3">
+                  <Phone className="w-5 h-5 text-secondary mt-0.5" />
+                  <div>
+                    <p>+91 92047 30464</p>
+                    <p>+91 62016 37225</p>
+                    <p>+91 91612 40573</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3">
+                  <Mail className="w-5 h-5 text-secondary mt-0.5" />
+                  <p>info@domuscure.in</p>
+                </div>
+
+                <div className="flex gap-3">
+                  <MapPin className="w-5 h-5 text-secondary mt-1" />
+                  <p className="leading-relaxed">Patna · Noida · Ranchi</p>
+                </div>
+              </div>
+
+              <Link
+                to="/contact"
+                className="mt-6 inline-flex items-center justify-center
+                       w-full rounded-xl bg-secondary text-secondary-foreground
+                       py-2.5 text-sm font-medium hover:opacity-90 transition"
+              >
+                Book a Consultation
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-background/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-background/60 text-sm">
-              © {new Date().getFullYear()} Domus Cure. All rights reserved.
-            </p>
-            <a href="https://filliptechnologies.com/" target="_blank">
-              <p className="text-background/60 text-sm hover:underline underline-offset-2">
-                Developed by Fillip Technologies Pvt. Ltd.
-              </p>
-            </a>
+        {/* Locations */}
+        <div className="mb-12">
+          <div className="bg-background/5 border border-background/10 rounded-2xl p-6">
+            <h4 className="text-sm font-semibold mb-6 flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-secondary" />
+              Our Offices
+            </h4>
+
+            <div className="grid gap-6 md:grid-cols-3 text-sm text-background/70">
+              {/* Patna */}
+              <div>
+                <p className="font-medium text-background mb-1">
+                  Patna (Head Office)
+                </p>
+                <p className="leading-relaxed">
+                  Nav Vihar Colony, 56 ka Dagar,
+                  <br />
+                  Near Nariyani Gas Godown,
+                  <br />
+                  Patna – 800008
+                </p>
+              </div>
+
+              {/* Noida */}
+              <div>
+                <p className="font-medium text-background mb-1">Noida</p>
+                <p className="leading-relaxed">
+                  Kailash Hospital, Sector 71,
+                  <br />
+                  Mamura, Gautam Budh Nagar,
+                  <br />
+                  Uttar Pradesh – 201309
+                </p>
+              </div>
+
+              {/* Ranchi */}
+              <div>
+                <p className="font-medium text-background mb-1">Ranchi</p>
+                <p className="leading-relaxed">
+                  H-238, RIIMS Rd,
+                  <br />
+                  Indraprasth Colony, Tunkitoli,
+                  <br />
+                  Jharkhand – 834009
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-t border-background/10 pt-6">
+          <p className="text-xs text-background/50">
+            © {new Date().getFullYear()} Domus Cure. All rights reserved.
+          </p>
+
+          <a
+            href="https://filliptechnologies.com/"
+            target="_blank"
+            className="text-xs text-background/50 hover:text-background transition"
+          >
+            Design and Developed by Fillip Technologies
+          </a>
         </div>
       </div>
 
-      {/* Scroll to top button */}
+      {/* Scroll to Top */}
       <motion.button
-        onClick={scrollToTop}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        whileHover={{ scale: 1.1 }}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed bottom-6 right-6 w-12 h-12 rounded-full gradient-cta shadow-button flex items-center justify-center z-50"
-        aria-label="Scroll to top"
+        className="fixed bottom-6 right-6 w-12 h-12 rounded-full
+               bg-secondary text-secondary-foreground shadow-xl
+               flex items-center justify-center z-50"
       >
-        <ArrowUp className="w-5 h-5 text-secondary-foreground" />
+        <ArrowUp className="w-5 h-5" />
       </motion.button>
     </footer>
   );
