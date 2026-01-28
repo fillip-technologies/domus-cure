@@ -4,6 +4,7 @@ import { Phone, MessageCircle, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { PHONE_NUMBER } from "@/const/contact";
+import logo from "@/assets/Domus.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -45,17 +46,17 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/">
+          {/* <Link to="/">
             <motion.div
               className="flex items-center gap-2"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              {/* <div className="w-10 h-10 rounded-xl gradient-hero flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl gradient-hero flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-lg">
                   D
                 </span>
-              </div> */}
+              </div>
               <span className="text-2xl font-bold text-foreground">
                 Domus
                 <span
@@ -65,6 +66,10 @@ export const Header = () => {
                 </span>
               </span>
             </motion.div>
+          </Link> */}
+
+          <Link to="/">
+            <img src={logo} alt="Domus Cure Logo" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

@@ -9,22 +9,72 @@ import {
   Activity,
   Dumbbell,
   CheckCircle2,
+  Plane,
+  Ambulance,
+  TestTube,
+  UserCheck,
 } from "lucide-react";
 import { useEffect } from "react";
 
 const services = [
   {
     icon: Stethoscope,
-    title: "Home Nursing Care",
+    title: "Home Nursing Services",
     description:
-      "Professional nursing services delivered at your doorstep by qualified and experienced nurses.",
+      "Professional nursing care provided at home by certified and experienced nurses for medical and personal needs.",
     features: [
-      "Wound care and dressing",
-      "Medication management",
-      "Vital signs monitoring",
-      "IV therapy and injections",
-      "Post-operative care",
-      "Chronic disease management",
+      "Patient Care at Home",
+      "Critical Care Nursing",
+      "Old Age Care",
+      "GDA (General Duty Attendant) Services",
+    ],
+    color: "bg-primary/10 text-primary",
+  },
+  {
+    icon: Plane,
+    title: "Elder Tour & Assisted Travel",
+    description:
+      "Safe and well-planned travel assistance for senior citizens with complete caregiving support throughout the journey.",
+    features: [
+      "Assisted travel for senior citizens",
+      "Caregiver support during tours",
+      "Safety-focused elder travel planning",
+    ],
+    color: "bg-primary/10 text-primary",
+  },
+  {
+    icon: Ambulance,
+    title: "Ambulance Services",
+    description:
+      "Reliable ambulance services for both emergency and non-emergency patient transportation with medical support.",
+    features: [
+      "Basic Ambulance",
+      "Non-emergency patient transfer",
+      "Advanced Ambulance",
+      "Emergency & critical support",
+    ],
+    color: "bg-primary/10 text-primary",
+  },
+  {
+    icon: TestTube,
+    title: "Lab Test Services",
+    description:
+      "Convenient home-based diagnostic and lab test services with accurate and timely medical reports.",
+    features: [
+      "Blood sample collection at home",
+      "Diagnostic sample collection at home",
+      "Timely and accurate reports",
+    ],
+    color: "bg-primary/10 text-primary",
+  },
+  {
+    icon: UserCheck,
+    title: "OPD Consultation Support",
+    description:
+      "Hassle-free OPD and doctor consultation support to help patients access the right medical care on time.",
+    features: [
+      "Doctor appointment coordination",
+      "Specialist consultation assistance",
     ],
     color: "bg-primary/10 text-primary",
   },
@@ -32,7 +82,7 @@ const services = [
     icon: Heart,
     title: "Elderly Care at Home",
     description:
-      "Compassionate and dedicated care for seniors to help them live comfortably at home.",
+      "Compassionate and personalized elderly care services designed to ensure comfort, safety, and dignity at home.",
     features: [
       "Daily living assistance",
       "Companionship and emotional support",
@@ -47,7 +97,7 @@ const services = [
     icon: Users,
     title: "Patient Attendant",
     description:
-      "Trained attendants providing continuous support for patients needing assistance.",
+      "Dedicated patient attendants offering round-the-clock support for hospital and home-based care needs.",
     features: [
       "24/7 patient monitoring",
       "Hospital stay support",
@@ -62,7 +112,7 @@ const services = [
     icon: Activity,
     title: "Post-Surgery Care",
     description:
-      "Specialized recovery support after surgical procedures for faster healing.",
+      "Comprehensive post-operative care at home to ensure safe recovery and faster healing after surgery.",
     features: [
       "Surgical wound care",
       "Pain management support",
@@ -77,7 +127,7 @@ const services = [
     icon: Dumbbell,
     title: "Physiotherapy at Home",
     description:
-      "Certified physiotherapists bringing rehabilitation services to your home.",
+      "Expert physiotherapy services at home to improve mobility, strength, and overall physical well-being.",
     features: [
       "Orthopedic rehabilitation",
       "Neurological physiotherapy",

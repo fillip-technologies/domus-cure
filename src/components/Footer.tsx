@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import logo from "@/assets/Domus.png";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -45,7 +46,7 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <Link to="/" className="flex items-center gap-2 mb-5">
+            {/* <Link to="/" className="flex items-center gap-2 mb-5">
               <div className="w-10 h-10 rounded-xl gradient-cta flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-lg">
                   D
@@ -54,8 +55,11 @@ export const Footer = () => {
               <span className="text-xl font-bold">
                 Domus<span className="text-secondary">Cure</span>
               </span>
+            </Link> */}
+            <Link to="/">
+              <img src={logo} alt="Domus Cure Logo" className="h-10 w-auto -ml-3" />
             </Link>
-            <p className="text-background/70 text-sm leading-relaxed mb-5">
+            <p className="text-background/70 text-sm leading-relaxed mb-5 mt-2">
               Professional home healthcare services bringing compassionate care
               to your loved ones, right at your doorstep.
             </p>
