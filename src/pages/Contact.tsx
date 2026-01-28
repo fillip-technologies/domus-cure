@@ -16,8 +16,9 @@ const Contact = () => {
       icon: MapPin,
       title: "Visit Our Office",
       details: [
-        "Ground Floor, A/3, Kankarbagh Main Rd",
-        "Near Chandan Hero, Patna, Bihar 800020",
+        "Nav Vihar Colony, 56 ka Dagar,",
+        "Near Nariyani Gas Godown,",
+        "Patna – 800008",
       ],
     },
     {
