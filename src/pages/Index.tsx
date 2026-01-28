@@ -9,9 +9,19 @@ import { Footer } from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { OfferSection } from "@/components/OfferSection";
 import { BookingFormModal } from "@/components/BookingFormModal";
+import { useLocation } from "react-router-dom";
 
 const Index = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      el?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [hash]);
 
   useEffect(() => {
     window.scrollTo(0, 0);

@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import { Phone, Calendar, ArrowRight, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PHONE_NUMBER } from "@/const/contact";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const CTASection = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   return (
     <section className="section-padding relative overflow-hidden py-10">
       {/* Background */}
@@ -46,9 +49,13 @@ export const CTASection = () => {
               size="lg"
               className="gap-2 bg-secondary hover:bg-secondary/90 text-white shadow-button h-14 px-8 text-base"
               onClick={() => {
-                document
-                  .getElementById("bookcare")
-                  ?.scrollIntoView({ behavior: "smooth" });
+                if (location.pathname !== "/") {
+                  navigate("/#bookcare");
+                } else {
+                  document
+                    .getElementById("bookcare")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }
               }}
             >
               <Calendar className="w-5 h-5" />
